@@ -4,10 +4,8 @@
 /*.dll
 /*.exe
 /*.meta
-/**/Logs/*
-/**/Library/*
-/**/Packages/*
-/**/ProjectSettings/*
-/**/Temp/*
-
-
+/Logs/*
+/Library/*
+/Packages/*
+/ProjectSettings/*
+/Temp/*
