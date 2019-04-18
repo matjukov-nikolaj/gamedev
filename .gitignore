@@ -1,0 +1,13 @@
+**/target
+**/.idea
+**/*.iml
+**/*.dll
+**/*.exe
+**/*.meta
+**/Logs
+**/Library
+**/Packages
+**/ProjectSettings
+**/Temp
+
+
