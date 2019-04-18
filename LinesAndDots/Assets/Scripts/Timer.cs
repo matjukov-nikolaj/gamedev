@@ -7,9 +7,10 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Тестируем конфликты
         GameObject.Find("Slider").GetComponent<Slider>().maxValue = timeLeft;
     }
-
+    // Тестируем конфликты
     // Update is called once per frame
     void Update()
     {
