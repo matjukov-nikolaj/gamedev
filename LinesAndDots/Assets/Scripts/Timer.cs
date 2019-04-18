@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
@@ -8,6 +9,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         // Тестируем конфликты
+        Console.WriteLine("Test conflicts");
         GameObject.Find("Slider").GetComponent<Slider>().maxValue = timeLeft;
     }
     // Тестируем конфликты
