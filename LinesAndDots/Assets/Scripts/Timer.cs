@@ -1,25 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    float timeLeft = 5.0f;
-    public Slider timer;
+    public float timeLeft;
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject.Find("Slider").GetComponent<Slider>().maxValue = timeLeft;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(GameObject.Find("Slider").GetComponent<Slider>().value);
         GameObject.Find("Slider").GetComponent<Slider>().value = timeLeft;
         timeLeft -= Time.deltaTime;
-        if(timeLeft < 0)
+        if(timeLeft <= 0)
         {
             GameOver();
         }
