@@ -1,10 +1,10 @@
-**/target
 **/.idea
-**/*.iml
-/*.dll
-/*.exe
-/*.meta
-/*.backup
+*.iml
+*.dll
+*.exe
+*.meta
+*.backup
+*.pdb
 /Logs/*
 /Library/*
 /Packages/*
