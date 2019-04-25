@@ -17,13 +17,17 @@ public class Dot : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            lineRenderer.SetPosition(1, GetCurrentMousePosition().GetValueOrDefault());
+            Vector3 pos = GetCurrentMousePosition().GetValueOrDefault();
+            pos.z = 0;
+            lineRenderer.SetPosition(1, pos);
         }
     }
 
     void OnMouseDown()
     {
-        lineRenderer.SetPosition(0, this.transform.position);
+        Vector3 newPos = transform.position;
+        newPos.z = 0;
+        lineRenderer.SetPosition(0, newPos);
     }
 
     private Vector3? GetCurrentMousePosition()
