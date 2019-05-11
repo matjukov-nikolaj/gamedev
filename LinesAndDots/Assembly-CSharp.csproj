@@ -59,7 +59,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Dot.cs" />
+    <Compile Include="Assets\Scripts\1Line\Dot11.cs" />
+    <Compile Include="Assets\Scripts\1Line\Dot21.cs" />
+    <Compile Include="Assets\Scripts\1Line\Dot31.cs" />
+    <Compile Include="Assets\Scripts\1Line\Dot41.cs" />
+    <Compile Include="Assets\Scripts\2Line\Dot12.cs" />
+    <Compile Include="Assets\Scripts\2Line\Dot22.cs" />
+    <Compile Include="Assets\Scripts\2Line\Dot32.cs" />
+    <Compile Include="Assets\Scripts\2Line\Dot42.cs" />
+    <Compile Include="Assets\Scripts\3Line\Dot13.cs" />
+    <Compile Include="Assets\Scripts\3Line\Dot23.cs" />
+    <Compile Include="Assets\Scripts\3Line\Dot33.cs" />
+    <Compile Include="Assets\Scripts\3Line\Dot43.cs" />
+    <Compile Include="Assets\Scripts\4Line\Dot14.cs" />
+    <Compile Include="Assets\Scripts\4Line\Dot24.cs" />
+    <Compile Include="Assets\Scripts\4Line\Dot34.cs" />
+    <Compile Include="Assets\Scripts\4Line\Dot44.cs" />
+    <Compile Include="Assets\Scripts\5Line\Dot15.cs" />
+    <Compile Include="Assets\Scripts\5Line\Dot25.cs" />
+    <Compile Include="Assets\Scripts\5Line\Dot35.cs" />
+    <Compile Include="Assets\Scripts\5Line\Dot45.cs" />
+    <Compile Include="Assets\Scripts\6Line\Dot16.cs" />
+    <Compile Include="Assets\Scripts\6Line\Dot26.cs" />
+    <Compile Include="Assets\Scripts\6Line\Dot36.cs" />
+    <Compile Include="Assets\Scripts\6Line\Dot46.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/gamedev/LinesAndDots/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
