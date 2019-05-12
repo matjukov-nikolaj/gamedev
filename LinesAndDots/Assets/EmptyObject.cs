@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class EmptyObject : MonoBehaviour
 {
+
     private int count;
 
     private LineRenderer lineRenderer;
@@ -14,12 +15,15 @@ public class EmptyObject : MonoBehaviour
     private Vector3 currPos;
 
     private Vector3 prevPos;
+    
     private Collider other1;
+
+    private bool firstCollision;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        firstCollision = true;
     }
 
     // Update is called once per frame
@@ -32,25 +36,28 @@ public class EmptyObject : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        count++;
-        if (count % 2 == 0)
-        {
-            currPos = other.transform.position;
-            lineRenderer.SetPosition(0, prevPos);
-            lineRenderer.SetPosition(1, currPos);
-            other1.GetComponent<Dot11>().isActive = false;
-
-        }
-        else
+        if (firstCollision)
         {
             lineRenderer = other.GetComponent(typeof(LineRenderer)) as LineRenderer;
             prevPos = other.transform.position;
             other1 = other;
+            firstCollision = false;
+        }
+        else
+        {
+            currPos = other.transform.position;
+            lineRenderer.SetPosition(0, prevPos);
+            lineRenderer.SetPosition(1, currPos);
+            other1.GetComponent<Dot11>().isLineOn = true;
+            prevPos = currPos;
+            lineRenderer = other.GetComponent(typeof(LineRenderer)) as LineRenderer;
+            other1 = other;
+
         }
     }
-    
+
     private Vector3? GetCurrentMousePosition()
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -62,7 +69,6 @@ public class EmptyObject : MonoBehaviour
             Vector3 pos = ray.GetPoint(rayDistance);
             pos.z = 0;
             return pos;
-
         }
 
         return null;
