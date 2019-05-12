@@ -2,12 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
-using DefaultNamespace;
 using UnityEngine;
 
 public class EmptyObject : MonoBehaviour
 {
-
     private int count;
 
     private LineRenderer lineRenderer;
@@ -15,11 +13,11 @@ public class EmptyObject : MonoBehaviour
     private Vector3 currPos;
 
     private Vector3 prevPos;
-    
+
     private Collider other1;
 
     private bool firstCollision;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,18 +42,15 @@ public class EmptyObject : MonoBehaviour
             prevPos = other.transform.position;
             other1 = other;
             firstCollision = false;
+            return;
         }
-        else
-        {
-            currPos = other.transform.position;
-            lineRenderer.SetPosition(0, prevPos);
-            lineRenderer.SetPosition(1, currPos);
-            other1.GetComponent<Dot11>().isLineOn = true;
-            prevPos = currPos;
-            lineRenderer = other.GetComponent(typeof(LineRenderer)) as LineRenderer;
-            other1 = other;
-
-        }
+        currPos = other.transform.position;
+        lineRenderer.SetPosition(0, prevPos);
+        lineRenderer.SetPosition(1, currPos);
+        other1.GetComponent<Dot>().isLineOn = true;
+        prevPos = currPos;
+        lineRenderer = other.GetComponent(typeof(LineRenderer)) as LineRenderer;
+        other1 = other;
     }
 
     private Vector3? GetCurrentMousePosition()
