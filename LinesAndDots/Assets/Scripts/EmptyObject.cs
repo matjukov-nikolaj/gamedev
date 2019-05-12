@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using DefaultNamespace;
 using UnityEngine;
 
@@ -44,14 +45,17 @@ public class EmptyObject : MonoBehaviour
             other1 = other;
             firstCollision = false;
         }
-        currPos = other.transform.position;
-        lineRenderer.SetPosition(0, prevPos);
-        lineRenderer.SetPosition(1, currPos);
-        other1.GetComponent<Dot11>().isLineOn = true;
-        prevPos = currPos;
-        lineRenderer = other.GetComponent(typeof(LineRenderer)) as LineRenderer;
-        other1 = other;
+        else
+        {
+            currPos = other.transform.position;
+            lineRenderer.SetPosition(0, prevPos);
+            lineRenderer.SetPosition(1, currPos);
+            other1.GetComponent<Dot11>().isLineOn = true;
+            prevPos = currPos;
+            lineRenderer = other.GetComponent(typeof(LineRenderer)) as LineRenderer;
+            other1 = other;
 
+        }
     }
 
     private Vector3? GetCurrentMousePosition()

@@ -43,10 +43,6 @@ public class Dot11 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isLineOn)
-        {
-            return;
-        }
         if (isActive)
         {
             return;
