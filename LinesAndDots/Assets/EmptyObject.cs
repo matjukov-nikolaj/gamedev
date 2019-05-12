@@ -1,11 +1,21 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using DefaultNamespace;
 using UnityEngine;
 
 public class EmptyObject : MonoBehaviour
 {
+    private int count;
+
+    private LineRenderer lineRenderer;
+
+    private Vector3 currPos;
+
+    private Vector3 prevPos;
+    private Collider other1;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +29,25 @@ public class EmptyObject : MonoBehaviour
         {
             Vector3 pos = GetCurrentMousePosition().GetValueOrDefault();
             transform.position = new Vector3(pos.x, pos.y, 90);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        count++;
+        if (count % 2 == 0)
+        {
+            currPos = other.transform.position;
+            lineRenderer.SetPosition(0, prevPos);
+            lineRenderer.SetPosition(1, currPos);
+            other1.GetComponent<Dot11>().isActive = false;
+
+        }
+        else
+        {
+            lineRenderer = other.GetComponent(typeof(LineRenderer)) as LineRenderer;
+            prevPos = other.transform.position;
+            other1 = other;
         }
     }
     

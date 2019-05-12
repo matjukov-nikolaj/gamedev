@@ -8,7 +8,7 @@ public class Dot11 : MonoBehaviour
 {
     private LineRenderer lineRenderer;
 
-    private bool isActive;
+    public bool isActive;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,6 @@ public class Dot11 : MonoBehaviour
     {
         if (isActive)
         {
-            lineRenderer.SetPosition(1, other.transform.position);
             return;
         }
 		lineRenderer.SetPosition(0, transform.position);
