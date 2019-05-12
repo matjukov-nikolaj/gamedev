@@ -10,7 +10,10 @@
           <e p="Dot.cs" t="Include" />
           <e p="EmptyObject.cs" t="Include" />
           <e p="LevelGenerator.cs" t="Include" />
+          <e p="MainMenu.cs" t="Include" />
+          <e p="SceneController.cs" t="Include" />
           <e p="Timer.cs" t="Include" />
+          <e p="UnactivateElements.cs" t="Include" />
         </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />

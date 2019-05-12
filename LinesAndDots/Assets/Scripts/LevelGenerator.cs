@@ -6,37 +6,111 @@ using Random = UnityEngine.Random;
 
 namespace DefaultNamespace
 {
-    public class LevelGenerator
+    public static class LevelGenerator
     {
-        private Dictionary<int, string> dots= new Dictionary<int, string>();
-        
-        private List<GameObject> generatedDots = new List<GameObject>();
+        private static Dictionary<int, string> dots= new Dictionary<int, string>();
 
-        public List<GameObject> GetGeneratedList()
+        private static List<GameObject> generatedDots;
+        
+        private static List<String> generatedDotsStr;
+        
+        private static List<int> variants = new List<int>();
+
+        public static List<GameObject> GetGeneratedList()
         {
             return generatedDots;
         }
-
-        public void generate()
+        
+        public static List<String> GetGeneratedListStr()
         {
+            return generatedDotsStr;
+        }
+        
+        public static void generate()
+        {
+            generatedDots = new List<GameObject>();
+            generatedDotsStr = new List<string>();
             GenerateDotsDictionary();
-            int numberOfDots = Random.Range(3, 24);
-            List<string> dotsArray = new List<string>();
+            GenerateVariants();
+            int numberOfVariant = Random.Range(1, variants.Count);
+            int numberOfDots = variants[numberOfVariant];
             while (numberOfDots != 0)
             {
                 int currentNumber = Random.Range(1, 24);
                 string value = dots[currentNumber];
-                if (!dotsArray.Contains(value))
+                if (!generatedDotsStr.Contains(value))
                 {
-                    dotsArray.Add(value);
+                    generatedDotsStr.Add(value);
                     --numberOfDots;
                 }
             }
 
-            GenerateDotsList(dotsArray);
+            GenerateDotsList(generatedDotsStr);
         }
 
-        private void GenerateDotsList(List<string> dotsArray)
+        private static void GenerateVariants()
+        {
+            variants.Add(3);
+            variants.Add(3);
+            variants.Add(6);
+            variants.Add(6);
+            variants.Add(3);
+            variants.Add(4);
+            variants.Add(5);
+            variants.Add(5);
+            variants.Add(3);
+            variants.Add(3);
+            variants.Add(4);
+            variants.Add(6);
+            variants.Add(4);
+            variants.Add(5);
+            variants.Add(4);
+            variants.Add(7);
+            variants.Add(4);
+            variants.Add(5);
+            variants.Add(5);
+            variants.Add(5);
+            variants.Add(6);
+            variants.Add(4);
+            variants.Add(7);
+            variants.Add(4);
+            variants.Add(3);
+            variants.Add(3);
+            variants.Add(3);
+            variants.Add(6);
+            variants.Add(4);
+            variants.Add(5);
+            variants.Add(7);
+            variants.Add(5);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(3);
+            variants.Add(5);
+            variants.Add(6);
+            variants.Add(5);
+            variants.Add(7);
+            variants.Add(5);
+            variants.Add(3);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(5);
+            variants.Add(6);
+            variants.Add(5);
+            variants.Add(5);
+            variants.Add(4);
+            variants.Add(6);
+            variants.Add(3);
+            variants.Add(3);
+            variants.Add(6);
+            variants.Add(5);
+            variants.Add(5);
+            variants.Add(7);
+        }
+
+        private static void GenerateDotsList(List<string> dotsArray)
         {
             foreach (var element in dotsArray)
             {
@@ -44,7 +118,7 @@ namespace DefaultNamespace
             }
         }
 
-        private void GenerateDotsDictionary()
+        private static void GenerateDotsDictionary()
         {
             dots.Add(1, "Dot11");
             dots.Add(2, "Dot21");

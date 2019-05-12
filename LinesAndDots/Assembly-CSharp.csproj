@@ -62,7 +62,10 @@
     <Compile Include="Assets\Scripts\Dot.cs" />
     <Compile Include="Assets\Scripts\EmptyObject.cs" />
     <Compile Include="Assets\Scripts\LevelGenerator.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\SceneController.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
+    <Compile Include="Assets\Scripts\UnactivateElements.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/gamedev/LinesAndDots/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

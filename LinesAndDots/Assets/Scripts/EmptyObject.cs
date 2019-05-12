@@ -17,6 +17,12 @@ public class EmptyObject : MonoBehaviour
     private Collider other1;
 
     private bool firstCollision;
+    
+    private List<String> visitedDots = new List<String>();
+    public List<String> GetVisitedDots()
+    {
+        return visitedDots;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +48,7 @@ public class EmptyObject : MonoBehaviour
             prevPos = other.transform.position;
             other1 = other;
             firstCollision = false;
+            visitedDots.Add(other.name);
             return;
         }
         currPos = other.transform.position;
@@ -51,6 +58,7 @@ public class EmptyObject : MonoBehaviour
         prevPos = currPos;
         lineRenderer = other.GetComponent(typeof(LineRenderer)) as LineRenderer;
         other1 = other;
+        visitedDots.Add(other.name);
     }
 
     private Vector3? GetCurrentMousePosition()
