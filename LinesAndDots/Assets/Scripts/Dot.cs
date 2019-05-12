@@ -21,11 +21,6 @@ public class Dot : MonoBehaviour
         }
     }
 
-    void OnMouseDown()
-    {
-        lineRenderer.SetPosition(0, this.transform.position);
-    }
-
     private Vector3? GetCurrentMousePosition()
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -34,8 +29,9 @@ public class Dot : MonoBehaviour
         float rayDistance;
         if (plane.Raycast(ray, out rayDistance))
         {
-            return ray.GetPoint(rayDistance);
-
+            Vector3 pos = ray.GetPoint(rayDistance);
+            pos.z = 0;
+            return pos;
         }
 
         return null;
