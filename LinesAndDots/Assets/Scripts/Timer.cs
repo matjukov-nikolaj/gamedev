@@ -16,7 +16,6 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(GameObject.Find("Slider").GetComponent<Slider>().value);
         GameObject.Find("Slider").GetComponent<Slider>().value = timeLeft;
         timeLeft -= Time.deltaTime;
         if(timeLeft < 0)

@@ -61,8 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\EmptyObject.cs" />
     <Compile Include="Assets\Scripts\1Line\Dot11.cs" />
-    <Compile Include="Assets\Scripts\1Line\Dot21.cs" />
-    <Compile Include="Assets\Scripts\2Line\Dot12.cs" />
+    <Compile Include="Assets\Scripts\Dot.cs" />
     <Compile Include="Assets\Scripts\Dots.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Reference Include="Unity.Timeline.Editor">

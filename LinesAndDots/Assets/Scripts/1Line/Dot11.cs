@@ -8,48 +8,53 @@ public class Dot11 : MonoBehaviour
 {
     private LineRenderer lineRenderer;
 
-    private bool isActive;
+    public bool isActive;
 
-    private Vector3 prevPos;
+    public bool isLineOn;
 
-    private Vector3 currPos;
 
     // Start is called before the first frame update
     void Start()
     {
-        prevPos = transform.position;
         lineRenderer = this.GetComponent(typeof(LineRenderer)) as LineRenderer;
         lineRenderer.SetWidth(3, 3);
         isActive = false;
+        isLineOn = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isLineOn)
+        {
+            return;
+        }
+
         if (Input.GetMouseButton(0))
         {
             Vector3 pos = GetCurrentMousePosition().GetValueOrDefault();
             pos.z = 0;
-            currPos = pos;
-            lineRenderer.SetPosition(1, currPos);
+            if (isActive)
+            {
+                lineRenderer.SetPosition(1, pos);
+            }
         }
-        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.position != transform.position)
+        if (isLineOn)
         {
-            
+            return;
         }
-
         if (isActive)
         {
             return;
         }
-        prevPos = other.transform.position;
 
-        prevPos = currPos;
+        Vector3 pos = transform.position;
+        pos.z = 0;
+        lineRenderer.SetPosition(0, pos);
         isActive = true;
     }
 
