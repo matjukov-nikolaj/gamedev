@@ -29,6 +29,7 @@ namespace DefaultNamespace
                 lineRenderer = usedDots[i].GetComponent(typeof(LineRenderer)) as LineRenderer;
                 prevPos = currPos;
             }
+            Destroy(GameObject.Find("EmptyObject"));
             DontDestroyOnLoad(this.gameObject);
             //                                 TODO 
             //           InsertAdditionalDots();

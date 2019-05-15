@@ -120,6 +120,7 @@ namespace DefaultNamespace
 
         private static void GenerateDotsDictionary()
         {
+            dots.Clear();
             dots.Add(1, "Dot11");
             dots.Add(2, "Dot21");
             dots.Add(3, "Dot31");

@@ -8,8 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    float timeLeft = 5.0f;
-    public Slider timer;
+    public float timeLeft;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,15 +51,20 @@ public class Timer : MonoBehaviour
                 win = visitedDots.Contains(requiredDot) ? true : false;
             }
             CanvasGroup resultScreen = GameObject.Find("CanvasGroup").GetComponent<CanvasGroup>();
+            SpriteRenderer blur = GameObject.Find("Blur").GetComponent<SpriteRenderer>();
+            Text resultText = GameObject.Find("Text").GetComponent<Text>();
             resultScreen.alpha = 1f;
             resultScreen.blocksRaycasts = true;
             if (win)
             {
-                SpriteRenderer blur = GameObject.Find("Blur").GetComponent<SpriteRenderer>();
-                blur.color = Color.green;
-//                blur.color = new Color(0.0, 255.0, 0.0, 0.2);
+                blur.color = new Color(0.0f, 255.0f, 0.0f, 0.2f);
+                resultText.text = "Win!";
             }
-            
+            else
+            {
+                blur.color = new Color(255.0f, 0.0f, 0.0f, 0.2f);
+                resultText.text = "Lose!";
+            }
             return;
         }
         Application.LoadLevel("SampleScene2");

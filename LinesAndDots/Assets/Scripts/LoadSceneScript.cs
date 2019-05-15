@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainMenu : MonoBehaviour
+public class LoadSceneScript : MonoBehaviour
 {
+    public string sceneName;
     public void GameStart()
     {
-        Application.LoadLevel("SampleScene");
+        Application.LoadLevel(sceneName);
     }
 }
