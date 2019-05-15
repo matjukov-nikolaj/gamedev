@@ -11,6 +11,7 @@ public class Dot : MonoBehaviour
 
     public bool isLineOn;
 
+    public bool isTrigger = true;
 
     // Start is called before the first frame update
     void Start()

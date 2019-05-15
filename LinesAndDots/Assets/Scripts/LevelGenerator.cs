@@ -50,6 +50,7 @@ namespace DefaultNamespace
 
         private static void GenerateVariants()
         {
+            variants.Clear();
             variants.Add(3);
             variants.Add(3);
             variants.Add(6);
@@ -75,6 +76,13 @@ namespace DefaultNamespace
             variants.Add(7);
             variants.Add(4);
             variants.Add(3);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
             variants.Add(3);
             variants.Add(3);
             variants.Add(6);
@@ -90,6 +98,16 @@ namespace DefaultNamespace
             variants.Add(3);
             variants.Add(5);
             variants.Add(6);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
             variants.Add(5);
             variants.Add(7);
             variants.Add(5);
@@ -97,6 +115,13 @@ namespace DefaultNamespace
             variants.Add(4);
             variants.Add(4);
             variants.Add(5);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
+            variants.Add(4);
             variants.Add(6);
             variants.Add(5);
             variants.Add(5);

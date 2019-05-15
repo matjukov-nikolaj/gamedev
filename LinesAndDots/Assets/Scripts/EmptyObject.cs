@@ -27,6 +27,7 @@ public class EmptyObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        visitedDots.Clear();
         firstCollision = true;
     }
 
@@ -42,6 +43,10 @@ public class EmptyObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!other.GetComponent<Dot>().isTrigger)
+        {
+            return;
+        }
         if (firstCollision)
         {
             lineRenderer = other.GetComponent(typeof(LineRenderer)) as LineRenderer;
@@ -49,6 +54,7 @@ public class EmptyObject : MonoBehaviour
             other1 = other;
             firstCollision = false;
             visitedDots.Add(other.name);
+            other.GetComponent<SpriteRenderer>().color = Color.green;
             return;
         }
         currPos = other.transform.position;
@@ -59,6 +65,8 @@ public class EmptyObject : MonoBehaviour
         lineRenderer = other.GetComponent(typeof(LineRenderer)) as LineRenderer;
         other1 = other;
         visitedDots.Add(other.name);
+        other1.GetComponent<Dot>().isTrigger = false;
+        other.GetComponent<SpriteRenderer>().color = Color.green;
     }
 
     private Vector3? GetCurrentMousePosition()
