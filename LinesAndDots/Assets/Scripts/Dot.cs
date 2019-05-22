@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Dot : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class Dot : MonoBehaviour
 
     public bool isTrigger = true;
 
+    public bool win;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,7 @@ public class Dot : MonoBehaviour
         lineRenderer.SetWidth(3, 3);
         isActive = false;
         isLineOn = false;
+        win = false;
     }
 
     // Update is called once per frame
@@ -37,6 +41,26 @@ public class Dot : MonoBehaviour
             if (isActive)
             {
                 lineRenderer.SetPosition(1, pos);
+                if (!win)
+                {
+                    Scene scene = SceneManager.GetActiveScene();
+                    if (scene.name == "SampleScene2")
+                    {
+                        GameObject slider = GameObject.Find("Slider");
+                        Timer timer = slider.GetComponent<Timer>();
+                        win = timer.GetGameResult();
+                        if (win && timer.timeLeft > (timer.time / 3))
+                        {
+                            timer.GameOver();
+                            win = true;
+                            /* TODO
+                             Сделать очивку за быструю отрисовку уровня
+                             я думаю лучше сделать просто увеличение счетчика win на один больше
+                             т е вывести сообщение Good memory! You are so fast! Win +3. 
+                             чтобы человека быстрее привести к успеху потому что люди и так будут много пригрывать*/
+                        }
+                    }
+                }
             }
         }
     }

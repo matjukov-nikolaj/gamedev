@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Analytics;
 using Random = UnityEngine.Random;
@@ -8,6 +10,8 @@ namespace DefaultNamespace
 {
     public static class LevelGenerator
     {
+        private static Dictionary<string, string> results = GameResult.GetParameters();
+        
         private static Dictionary<int, string> dots= new Dictionary<int, string>();
 
         private static List<GameObject> generatedDots;
@@ -51,88 +55,68 @@ namespace DefaultNamespace
         private static void GenerateVariants()
         {
             variants.Clear();
-            variants.Add(3);
-            variants.Add(3);
-            variants.Add(6);
-            variants.Add(6);
-            variants.Add(3);
-            variants.Add(4);
-            variants.Add(5);
-            variants.Add(5);
-            variants.Add(3);
-            variants.Add(3);
-            variants.Add(4);
-            variants.Add(6);
-            variants.Add(4);
-            variants.Add(5);
-            variants.Add(4);
-            variants.Add(7);
-            variants.Add(4);
-            variants.Add(5);
-            variants.Add(5);
-            variants.Add(5);
-            variants.Add(6);
-            variants.Add(4);
-            variants.Add(7);
-            variants.Add(4);
-            variants.Add(3);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(3);
-            variants.Add(3);
-            variants.Add(6);
-            variants.Add(4);
-            variants.Add(5);
-            variants.Add(7);
-            variants.Add(5);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(3);
-            variants.Add(5);
-            variants.Add(6);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(5);
-            variants.Add(7);
-            variants.Add(5);
-            variants.Add(3);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(5);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(4);
-            variants.Add(6);
-            variants.Add(5);
-            variants.Add(5);
-            variants.Add(4);
-            variants.Add(6);
-            variants.Add(3);
-            variants.Add(3);
-            variants.Add(6);
-            variants.Add(5);
-            variants.Add(5);
-            variants.Add(7);
+            int resultWins = Int32.Parse(results["WINS"]);
+            int resultLoses = Int32.Parse(results["LOSES"]);
+            int currentLevel = resultWins + resultLoses;
+            float diff = 1.0f;
+            if (resultLoses > 0)
+            {
+                diff = resultWins / resultLoses;
+            }
+            if (currentLevel > 500 && diff > 0.5)
+            {
+                variants.Add(9);
+                variants.Add(10);
+                return;
+            }
+            if (currentLevel > 0 && currentLevel <= 20)
+            {
+                variants.Add(3);
+                variants.Add(4);
+            }
+            else if (currentLevel > 20 && currentLevel <= 50)
+            {
+                variants.Add(4);
+                variants.Add(5);
+
+            } else if (currentLevel > 50 && currentLevel <= 150)
+            {
+                variants.Add(4);
+                variants.Add(5);
+                variants.Add(6);
+
+            } else if (currentLevel > 150 && currentLevel <= 300)
+            {
+                variants.Add(5);
+                variants.Add(6);
+                variants.Add(7);
+            } else if (currentLevel > 300 && currentLevel <= 500)
+            {
+                variants.Add(6);
+                variants.Add(7);
+                variants.Add(8);
+            }
+            else
+            {
+                variants.Add(4);
+                variants.Add(8);
+                variants.Add(6);
+                variants.Add(4);
+                variants.Add(5);
+                variants.Add(5);
+                variants.Add(6);
+                variants.Add(5);
+                variants.Add(4);
+                variants.Add(6);
+                variants.Add(5);
+                variants.Add(5);
+                variants.Add(5);
+                variants.Add(6);
+                variants.Add(4);
+                variants.Add(5);
+                variants.Add(7);
+                variants.Add(6);
+            }
         }
 
         private static void GenerateDotsList(List<string> dotsArray)

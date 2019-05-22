@@ -6,6 +6,7 @@ namespace DefaultNamespace
 {
     public class SceneController : MonoBehaviour
     {
+        private Dictionary<string, string> results = GameResult.GetParameters();
         
         private List<GameObject> sceneDots = new List<GameObject>();
 
@@ -14,18 +15,57 @@ namespace DefaultNamespace
 
         void Start()
         {
+            StartCoroutine (BetweenFunc ());
+        }
+        
+        IEnumerator<WaitForSeconds> BetweenFunc()
+        {
+            StartCoroutine (ShowHelpBox ());
+            yield return new WaitForSeconds(2.0f);
             GenerateSceneDots();
             LevelGenerator.generate();
+            StartCoroutine (DrawDotsDinamicly ());
+        }
+        
+        IEnumerator<WaitForSeconds> ShowHelpBox()
+        {
+            int resultWins = Int32.Parse(results["WINS"]);
+            int resultLoses = Int32.Parse(results["LOSES"]);
+            int currentLevel = resultWins + resultLoses;
+            CanvasGroup resultScreen = GameObject.Find("CanvasGroup").GetComponent<CanvasGroup>();
+            if (currentLevel <= 3)
+            {
+                resultScreen.alpha = 1f;
+                resultScreen.blocksRaycasts = true;
+                yield return new WaitForSeconds(3.0f);
+                resultScreen = GameObject.Find("CanvasGroup").GetComponent<CanvasGroup>();
+                resultScreen.alpha = 0f;
+                resultScreen.blocksRaycasts = false;
+            }
+            else
+            {
+                resultScreen = GameObject.Find("CanvasGroup").GetComponent<CanvasGroup>();
+                resultScreen.alpha = 0f;
+                resultScreen.blocksRaycasts = false;
+            }
+        }
+
+        IEnumerator<WaitForSeconds> DrawDotsDinamicly()
+        {
+            GenerateSceneDots();
             usedDots = LevelGenerator.GetGeneratedList();
  
             Vector3 prevPos = usedDots[0].transform.position;
             LineRenderer lineRenderer = usedDots[0].GetComponent(typeof(LineRenderer)) as LineRenderer;
+            yield return new WaitForSeconds(0.2f);
             usedDots[0].GetComponent<SpriteRenderer>().color = Color.green;
             for(int i = 1; i < usedDots.Count; ++i)
             {
+                yield return new WaitForSeconds(0.5f);
                 GameObject dot = usedDots[i];
                 Vector3 currPos = dot.transform.position;
                 lineRenderer.SetPosition(0, prevPos);
+                lineRenderer.numCornerVertices = 5;
                 lineRenderer.SetPosition(1, currPos);
                 lineRenderer = usedDots[i].GetComponent(typeof(LineRenderer)) as LineRenderer;
                 prevPos = currPos;
@@ -33,19 +73,6 @@ namespace DefaultNamespace
             }
             Destroy(GameObject.Find("EmptyObject"));
             DontDestroyOnLoad(this.gameObject);
-            //                                 TODO 
-            //           InsertAdditionalDots();
-            //           private void InsertAdditionalDots()
-            //           {
-            //               foreach (var sceneDot in sceneDots)
-            //               {
-            //                   if (sceneDot.GetComponent<Dot>().isActive && !usedDots.Contains(sceneDot))
-            //                   {
-            //                       usedDots.Add(sceneDot);
-            //                       Console.WriteLine(sceneDot.ToString());
-            //                   }
-            //               }
-            //           }
         }
 
         private void GenerateSceneDots()

@@ -273,8 +273,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -36.6, y: 128.28001}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: -43.42, y: 144.5}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!120 &184211399
 LineRenderer:
@@ -385,6 +385,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!135 &184211401
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -396,7 +398,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &184211402
 SpriteRenderer:
@@ -482,8 +484,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 41.8, y: 188.88}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: 52.12, y: 259.3}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!120 &221576548
 LineRenderer:
@@ -594,6 +596,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!135 &221576550
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -605,7 +609,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &221576551
 SpriteRenderer:
@@ -691,8 +695,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40.6, y: 13.6}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: 50.36, y: -71.9}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!120 &233183787
 LineRenderer:
@@ -803,6 +807,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!135 &233183789
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -814,7 +820,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &233183790
 SpriteRenderer:
@@ -900,8 +906,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 39.999992, y: -107.780014}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: 49.3, y: -279}
+  m_SizeDelta: {x: 0.1, y: 0.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!120 &341958629
 LineRenderer:
@@ -1012,6 +1018,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!135 &341958631
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1023,7 +1031,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &341958632
 SpriteRenderer:
@@ -1109,8 +1117,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40.6, y: -46.459984}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: 50.2, y: -171.2}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!120 &438296413
 LineRenderer:
@@ -1221,6 +1229,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!135 &438296415
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1232,7 +1242,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &438296416
 SpriteRenderer:
@@ -1318,8 +1328,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 112.9, y: 71.43999}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: 139.43, y: 42.4}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &496276823
 MonoBehaviour:
@@ -1335,6 +1345,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!120 &496276824
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1441,7 +1453,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &496276826
 SpriteRenderer:
@@ -1610,8 +1622,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 112.3, y: -46.219997}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: 139.16, y: -170.96}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &576510283
 MonoBehaviour:
@@ -1627,6 +1639,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!120 &576510284
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1733,7 +1747,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &576510286
 SpriteRenderer:
@@ -1819,8 +1833,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 41.8, y: 128.2}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: 52.44, y: 144.41998}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!120 &582540832
 LineRenderer:
@@ -1931,6 +1945,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!135 &582540834
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1942,7 +1958,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &582540835
 SpriteRenderer:
@@ -2028,8 +2044,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115.59998, y: 71.359985}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: -140.66, y: 42.319996}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!120 &685254195
 LineRenderer:
@@ -2140,6 +2156,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!135 &685254197
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2151,7 +2169,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &685254198
 SpriteRenderer:
@@ -2237,8 +2255,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 113.5, y: 128.43999}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: 140.11, y: 144.65997}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &687929552
 MonoBehaviour:
@@ -2254,6 +2272,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!120 &687929553
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -2360,7 +2380,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &687929555
 SpriteRenderer:
@@ -2446,8 +2466,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -116.79999, y: -107.620026}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: -141.8, y: -278.84003}
+  m_SizeDelta: {x: 0.1, y: 0.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!120 &747640032
 LineRenderer:
@@ -2558,6 +2578,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!135 &747640034
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2569,7 +2591,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &747640035
 SpriteRenderer:
@@ -2619,6 +2641,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &828992505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 828992506}
+  - component: {fileID: 828992507}
+  m_Layer: 5
+  m_Name: CanvasGroup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &828992506
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828992505}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1537014074}
+  m_Father: {fileID: 1484498193}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &828992507
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828992505}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &847052344
 GameObject:
   m_ObjectHideFlags: 0
@@ -2655,8 +2726,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -116.19998, y: -46.3}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: -144.34, y: -171.04001}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!120 &847052346
 LineRenderer:
@@ -2767,6 +2838,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!135 &847052348
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2778,7 +2851,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &847052349
 SpriteRenderer:
@@ -2864,8 +2937,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 111.7, y: -107.54002}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: 136.7, y: -278.76004}
+  m_SizeDelta: {x: 0.1, y: 0.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1004409793
 MonoBehaviour:
@@ -2881,6 +2954,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!120 &1004409794
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -2987,7 +3062,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1004409796
 SpriteRenderer:
@@ -3073,8 +3148,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -38.4, y: -107.7}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: -46.300003, y: -278.92}
+  m_SizeDelta: {x: 0.1, y: 0.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!120 &1126168021
 LineRenderer:
@@ -3185,6 +3260,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!135 &1126168023
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3196,7 +3273,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1126168024
 SpriteRenderer:
@@ -3282,8 +3359,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -37.799995, y: -46.37997}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: -47.07, y: -171.11998}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!120 &1211843728
 LineRenderer:
@@ -3394,6 +3471,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!135 &1211843730
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3405,7 +3484,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1211843731
 SpriteRenderer:
@@ -3491,8 +3570,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115, y: 189.04}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: -138.56, y: 259.46}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1299791908
 MonoBehaviour:
@@ -3508,6 +3587,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!135 &1299791909
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3519,7 +3600,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1299791910
 SpriteRenderer:
@@ -3700,8 +3781,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -36.6, y: 188.96}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: -43.22, y: 259.38}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!120 &1345276826
 LineRenderer:
@@ -3812,6 +3893,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!135 &1345276828
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3823,7 +3906,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1345276829
 SpriteRenderer:
@@ -4055,6 +4138,7 @@ RectTransform:
   - {fileID: 1126168020}
   - {fileID: 341958628}
   - {fileID: 1004409792}
+  - {fileID: 828992506}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4063,6 +4147,85 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1537014073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1537014074}
+  - component: {fileID: 1537014076}
+  - component: {fileID: 1537014075}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1537014074
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537014073}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_Children: []
+  m_Father: {fileID: 828992506}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 5.8, y: 98.9}
+  m_SizeDelta: {x: 150, y: 120}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1537014075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537014073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Remember \nsequence\nconnecting\npoints"
+--- !u!222 &1537014076
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537014073}
+  m_CullTransparentMesh: 0
 --- !u!1 &1544485393
 GameObject:
   m_ObjectHideFlags: 0
@@ -4099,8 +4262,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 113.5, y: 189.12}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: 139.31, y: 259.53998}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1544485395
 MonoBehaviour:
@@ -4116,6 +4279,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!120 &1544485396
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -4222,7 +4387,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1544485398
 SpriteRenderer:
@@ -4344,8 +4509,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115, y: 128.35999}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: -139.27, y: 144.57997}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!120 &1634123607
 LineRenderer:
@@ -4456,6 +4621,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!135 &1634123609
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4467,7 +4634,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1634123610
 SpriteRenderer:
@@ -4553,8 +4720,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -116.19998, y: 13.759983}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: -143.7, y: -71.74002}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!120 &1714502963
 LineRenderer:
@@ -4665,6 +4832,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!135 &1714502965
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4676,7 +4845,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1714502966
 SpriteRenderer:
@@ -4762,8 +4931,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 112.299995, y: 13.839985}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: 139.09, y: -71.66002}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1716009094
 MonoBehaviour:
@@ -4779,6 +4948,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!120 &1716009095
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -4885,7 +5056,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1716009097
 SpriteRenderer:
@@ -4970,8 +5141,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 239.5}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: -0.88035, y: 299.4}
+  m_SizeDelta: {x: 277.06, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1796521313
 MonoBehaviour:
@@ -5037,7 +5208,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e2d547c9564c546b26b0c0ee19e1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 0
   timeLeft: 5
+  isGameOver: 0
 --- !u!1 &1893168599
 GameObject:
   m_ObjectHideFlags: 0
@@ -5047,7 +5220,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1893168600}
-  - component: {fileID: 1893168603}
   - component: {fileID: 1893168601}
   - component: {fileID: 1893168604}
   - component: {fileID: 1893168602}
@@ -5105,54 +5277,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!212 &1893168603
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1893168599}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!135 &1893168604
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5202,8 +5326,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 41.2, y: 71.2}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: 51.54, y: 42.160007}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!120 &1929441653
 LineRenderer:
@@ -5314,6 +5438,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!135 &1929441655
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5325,7 +5451,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1929441656
 SpriteRenderer:
@@ -5411,8 +5537,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -37.799995, y: 13.680012}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: -46.67, y: -71.81999}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!120 &1991868594
 LineRenderer:
@@ -5523,6 +5649,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!135 &1991868596
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5534,7 +5662,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1991868597
 SpriteRenderer:
@@ -5620,8 +5748,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -37.199997, y: 71.280014}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_AnchoredPosition: {x: -44.56, y: 42.240025}
+  m_SizeDelta: {x: 0.1, y: 0.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!120 &2085325650
 LineRenderer:
@@ -5732,6 +5860,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   isLineOn: 0
+  isTrigger: 1
+  win: 0
 --- !u!135 &2085325652
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5743,7 +5873,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &2085325653
 SpriteRenderer:
