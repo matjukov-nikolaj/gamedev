@@ -26,44 +26,55 @@ public class Timer : MonoBehaviour
         int resultWins = Int32.Parse(results["WINS"]);
         int resultLoses = Int32.Parse(results["LOSES"]);
         int currentLevel = resultWins + resultLoses;
-        float diff = resultWins / resultLoses;
+        float diff = 1.0f;
+        if (resultLoses > 0)
+        {
+            diff = resultWins / resultLoses;
+        }
+
+        Slider slider = GameObject.Find("Slider").GetComponent<Slider>();
         time = timeLeft;
         if (scene.name == "SampleScene")
         {
-//            if (currentLevel > 500 && diff > 0.5)
-//            {
-//                timeLeft = 20;
-//                return;
-//            }
-//            if (currentLevel > 0 && currentLevel <= 150)
-//            {
-//                timeLeft = 5;
-//            }
-//            else if (currentLevel > 150 && currentLevel <= 500)
-//            {
-//                timeLeft = 8;
-//            }
-//            else
-//            {
-//                timeLeft = 7;
-//            }
+            if (currentLevel > 500 && diff > 0.5)
+            {
+                timeLeft = 20;
+                slider.maxValue = 20;
+                return;
+            }
+            if (currentLevel > 0 && currentLevel <= 150)
+            {
+                timeLeft = 5;
+                slider.maxValue = 5;
+            }
+            else if (currentLevel > 150 && currentLevel <= 500)
+            {
+                timeLeft = 8;
+                slider.maxValue = 8;
+            }
+            else
+            {
+                timeLeft = 7;
+                slider.maxValue = 7;
+            }
         }
 
         if (scene.name == "SampleScene2")
         {
-//            if (currentLevel > 500 && diff > 0.5)
-//            {
-//                timeLeft = 30;
-//                return;
-//            }
-//            if (currentLevel > 0 && currentLevel <= 150)
-//            {
-//                timeLeft = 10;
-//            }
-//            else
-//            {
-//                timeLeft = 15;
-//            }
+            if (currentLevel > 500 && diff > 0.5)
+            {
+                timeLeft = 30;
+                slider.maxValue = 30;
+            } else if (currentLevel > 0 && currentLevel <= 150)
+            {
+                timeLeft = 10;
+                slider.maxValue = 10;
+            }
+            else
+            {
+                timeLeft = 15;
+                slider.maxValue = 15;
+            }
 
             CanvasGroup resultScreen = GameObject.Find("CanvasGroup").GetComponent<CanvasGroup>();
             resultScreen.alpha = 0f;

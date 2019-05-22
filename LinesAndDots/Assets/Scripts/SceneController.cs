@@ -6,6 +6,7 @@ namespace DefaultNamespace
 {
     public class SceneController : MonoBehaviour
     {
+        private Dictionary<string, string> results = GameResult.GetParameters();
         
         private List<GameObject> sceneDots = new List<GameObject>();
 
@@ -14,9 +15,39 @@ namespace DefaultNamespace
 
         void Start()
         {
+            StartCoroutine (BetweenFunc ());
+        }
+        
+        IEnumerator<WaitForSeconds> BetweenFunc()
+        {
+            StartCoroutine (ShowHelpBox ());
+            yield return new WaitForSeconds(2.0f);
             GenerateSceneDots();
             LevelGenerator.generate();
             StartCoroutine (DrawDotsDinamicly ());
+        }
+        
+        IEnumerator<WaitForSeconds> ShowHelpBox()
+        {
+            int resultWins = Int32.Parse(results["WINS"]);
+            int resultLoses = Int32.Parse(results["LOSES"]);
+            int currentLevel = resultWins + resultLoses;
+            CanvasGroup resultScreen = GameObject.Find("CanvasGroup").GetComponent<CanvasGroup>();
+            if (currentLevel <= 3)
+            {
+                resultScreen.alpha = 1f;
+                resultScreen.blocksRaycasts = true;
+                yield return new WaitForSeconds(3.0f);
+                resultScreen = GameObject.Find("CanvasGroup").GetComponent<CanvasGroup>();
+                resultScreen.alpha = 0f;
+                resultScreen.blocksRaycasts = false;
+            }
+            else
+            {
+                resultScreen = GameObject.Find("CanvasGroup").GetComponent<CanvasGroup>();
+                resultScreen.alpha = 0f;
+                resultScreen.blocksRaycasts = false;
+            }
         }
 
         IEnumerator<WaitForSeconds> DrawDotsDinamicly()

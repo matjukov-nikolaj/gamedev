@@ -58,7 +58,11 @@ namespace DefaultNamespace
             int resultWins = Int32.Parse(results["WINS"]);
             int resultLoses = Int32.Parse(results["LOSES"]);
             int currentLevel = resultWins + resultLoses;
-            float diff = resultWins / resultLoses;
+            float diff = 1.0f;
+            if (resultLoses > 0)
+            {
+                diff = resultWins / resultLoses;
+            }
             if (currentLevel > 500 && diff > 0.5)
             {
                 variants.Add(9);
@@ -96,17 +100,22 @@ namespace DefaultNamespace
             {
                 variants.Add(4);
                 variants.Add(8);
+                variants.Add(6);
+                variants.Add(4);
+                variants.Add(5);
+                variants.Add(5);
+                variants.Add(6);
+                variants.Add(5);
+                variants.Add(4);
+                variants.Add(6);
+                variants.Add(5);
                 variants.Add(5);
                 variants.Add(5);
                 variants.Add(6);
                 variants.Add(4);
-                variants.Add(6);
                 variants.Add(5);
-                variants.Add(6);
                 variants.Add(7);
                 variants.Add(6);
-
-
             }
         }
 
