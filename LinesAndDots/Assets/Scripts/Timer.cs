@@ -18,6 +18,8 @@ public class Timer : MonoBehaviour
 
     public bool isGameOver;
 
+    public bool isInfo = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -87,6 +89,10 @@ public class Timer : MonoBehaviour
 // Update is called once per frame
     void Update()
     {
+//        if (isInfo)
+//        {
+//            return;
+//        }
         GameObject.Find("Slider").GetComponent<Slider>().value = timeLeft;
         if (timeLeft > 0)
         {
