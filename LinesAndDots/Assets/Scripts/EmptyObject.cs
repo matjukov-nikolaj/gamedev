@@ -19,6 +19,8 @@ public class EmptyObject : MonoBehaviour
     private bool firstCollision;
     
     private List<String> visitedDots = new List<String>();
+    
+    AudioSource audioData;
     public List<String> GetVisitedDots()
     {
         return visitedDots;
@@ -27,6 +29,7 @@ public class EmptyObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioData = GetComponent<AudioSource>();
         visitedDots.Clear();
         firstCollision = true;
     }
@@ -67,6 +70,8 @@ public class EmptyObject : MonoBehaviour
         visitedDots.Add(other.name);
         other1.GetComponent<Dot>().isTrigger = false;
         other.GetComponent<SpriteRenderer>().color = Color.green;
+        audioData.Play(0);
+
     }
 
     private Vector3? GetCurrentMousePosition()

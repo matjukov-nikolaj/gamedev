@@ -146,11 +146,15 @@ public class Timer : MonoBehaviour
             {
                 blur.color = new Color(0.0f, 255.0f, 0.0f, 0.2f);
                 resultText.text = "Win!";
+                AudioSource audioSource = GameObject.Find("WinAudio").GetComponent<AudioSource>();
+                audioSource.Play(0);
             }
             else
             {
                 blur.color = new Color(255.0f, 0.0f, 0.0f, 0.2f);
                 resultText.text = "Lose!";
+                AudioSource audioSource = GameObject.Find("LoseAudio").GetComponent<AudioSource>();
+                audioSource.Play(0);
             }
 
             isGameOver = true;
