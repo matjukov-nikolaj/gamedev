@@ -32,7 +32,7 @@ namespace DefaultNamespace
             int resultWins = Int32.Parse(results["WINS"]);
             int resultLoses = Int32.Parse(results["LOSES"]);
             int currentLevel = resultWins + resultLoses;
-            CanvasGroup resultScreen = GameObject.Find("CanvasGroup").GetComponent<CanvasGroup>();
+            CanvasGroup resultScreen = GameObject.Find("Hints").GetComponent<CanvasGroup>();
             if (currentLevel <= 3)
             {
                 resultScreen.alpha = 1f;

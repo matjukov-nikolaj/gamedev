@@ -10,4 +10,9 @@ public class LoadSceneScript : MonoBehaviour
     {
         Application.LoadLevel(sceneName);
     }
+    
+    public void MainMenu()
+    {
+        Application.LoadLevel("MainMenu");
+    }
 }

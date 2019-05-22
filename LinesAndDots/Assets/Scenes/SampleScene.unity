@@ -2652,7 +2652,7 @@ GameObject:
   - component: {fileID: 828992506}
   - component: {fileID: 828992507}
   m_Layer: 5
-  m_Name: CanvasGroup
+  m_Name: Hints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
