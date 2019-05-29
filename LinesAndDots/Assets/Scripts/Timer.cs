@@ -18,8 +18,6 @@ public class Timer : MonoBehaviour
 
     public bool isGameOver;
 
-    public bool isInfo = true;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +34,11 @@ public class Timer : MonoBehaviour
 
         Slider slider = GameObject.Find("Slider").GetComponent<Slider>();
         time = timeLeft;
+        if (currentLevel <= 3)
+        {
+            timeLeft += 2;
+        }
+
         if (scene.name == "SampleScene")
         {
             if (currentLevel > 500 && diff > 0.5)
@@ -44,6 +47,7 @@ public class Timer : MonoBehaviour
                 slider.maxValue = 20;
                 return;
             }
+
             if (currentLevel > 0 && currentLevel <= 150)
             {
                 timeLeft = 5;
@@ -67,7 +71,8 @@ public class Timer : MonoBehaviour
             {
                 timeLeft = 30;
                 slider.maxValue = 30;
-            } else if (currentLevel > 0 && currentLevel <= 150)
+            }
+            else if (currentLevel > 0 && currentLevel <= 150)
             {
                 timeLeft = 10;
                 slider.maxValue = 10;
@@ -89,11 +94,10 @@ public class Timer : MonoBehaviour
 // Update is called once per frame
     void Update()
     {
-//        if (isInfo)
-//        {
-//            return;
-//        }
-        GameObject.Find("Slider").GetComponent<Slider>().value = timeLeft;
+        Slider slider = GameObject.Find("Slider").GetComponent<Slider>();
+
+        slider.value = timeLeft;
+
         if (timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
@@ -136,9 +140,10 @@ public class Timer : MonoBehaviour
             int currentLevel = resultWins + resultLoses;
             if (currentLevel == Int32.MaxValue)
             {
-// TODO написать что игра закончилась проигрыши и выигрыши обновились
                 results["LOSES"] = "0";
                 results["WINS"] = "0";
+                File.WriteAllLines("game.result",
+                    results.Select(element => element.Key + "=" + element.Value).ToArray());
             }
 
             File.WriteAllLines("game.result",
@@ -151,9 +156,18 @@ public class Timer : MonoBehaviour
             if (win)
             {
                 blur.color = new Color(0.0f, 255.0f, 0.0f, 0.2f);
-                resultText.text = "Win!";
-                AudioSource audioSource = GameObject.Find("WinAudio").GetComponent<AudioSource>();
-                audioSource.Play(0);
+                if (timeLeft > (time / 3))
+                {
+                    resultText.text = "You are so fast! Win +3";
+                    AudioSource audioSource1 = GameObject.Find("WinAudio").GetComponent<AudioSource>();
+                    audioSource1.Play(0);
+                }
+                else
+                {
+                    resultText.text = "Win!";
+                    AudioSource audioSource = GameObject.Find("WinAudio").GetComponent<AudioSource>();
+                    audioSource.Play(0);
+                }
             }
             else
             {

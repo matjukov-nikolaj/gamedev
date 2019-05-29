@@ -59,7 +59,7 @@ namespace DefaultNamespace
             int resultLoses = Int32.Parse(results["LOSES"]);
             int currentLevel = resultWins + resultLoses;
             float diff = 1.0f;
-            if (resultLoses > 0 && resultWins > 0)
+            if (resultLoses > 0)
             {
                 diff = resultWins / resultLoses;
             }

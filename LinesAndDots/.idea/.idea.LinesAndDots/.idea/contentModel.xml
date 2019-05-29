@@ -10,6 +10,7 @@
           <e p="Dot.cs" t="Include" />
           <e p="EmptyObject.cs" t="Include" />
           <e p="GameResult.cs" t="Include" />
+          <e p="Hints.cs" t="Include" />
           <e p="LevelGenerator.cs" t="Include" />
           <e p="LoadSceneScript.cs" t="Include" />
           <e p="SceneController.cs" t="Include" />

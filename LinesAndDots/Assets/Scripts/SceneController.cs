@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace DefaultNamespace
@@ -17,47 +16,33 @@ namespace DefaultNamespace
 
         void Start()
         {
+            StartCoroutine (ShowHelpBox ());
             GenerateSceneDots();
             LevelGenerator.generate();
-            StartCoroutine (DrawDotsDinamically ());
-//            StartCoroutine (BetweenFunc ());
+            StartCoroutine (DrawDotsDinamicly ());
         }
-        
-//        IEnumerator<WaitForSeconds> BetweenFunc()
-//        {
-//            StartCoroutine (ShowHelpBox ());
-//            yield return new WaitForSeconds(3.0f);
-//            GenerateSceneDots();
-//            LevelGenerator.generate();
-//            StartCoroutine (DrawDotsDinamically ());
-//        }
         
         IEnumerator<WaitForSeconds> ShowHelpBox()
         {
-            Scene scene = SceneManager.GetActiveScene();
             int resultWins = Int32.Parse(results["WINS"]);
             int resultLoses = Int32.Parse(results["LOSES"]);
             int currentLevel = resultWins + resultLoses;
-            GameObject slider = GameObject.Find("Slider");
-            Timer timer = slider.GetComponent<Timer>();
-            timer.timeLeft = timer.time + 2.0f;
-            slider.GetComponent<Slider>().maxValue = timer.time + 2.0f;
-            timer.isInfo = true;
             CanvasGroup resultScreen = GameObject.Find("Hints").GetComponent<CanvasGroup>();
-            resultScreen.alpha = 0f;
-            resultScreen.blocksRaycasts = false;
-            if (currentLevel >= 0 && currentLevel < 3 && scene.name == "SampleScene")
+            if (currentLevel <= 3)
             {
                 resultScreen.alpha = 1f;
                 resultScreen.blocksRaycasts = true;
-                timer.isInfo = false;
-                yield return new WaitForSeconds(2.0f);
+                yield return new WaitForSeconds(2);
+                resultScreen.alpha = 0f;
+                resultScreen.blocksRaycasts = false;
+            }
+            else
+            {
                 resultScreen.alpha = 0f;
                 resultScreen.blocksRaycasts = false;
             }
         }
-
-        IEnumerator<WaitForSeconds> DrawDotsDinamically()
+        IEnumerator<WaitForSeconds> DrawDotsDinamicly()
         {
             GenerateSceneDots();
             usedDots = LevelGenerator.GetGeneratedList();

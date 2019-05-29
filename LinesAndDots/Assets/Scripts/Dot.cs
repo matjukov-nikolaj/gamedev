@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Dot : MonoBehaviour
 {
+    private Dictionary<string, string> results = GameResult.GetParameters();
+    
     private LineRenderer lineRenderer;
 
     public bool isActive;
@@ -53,11 +58,11 @@ public class Dot : MonoBehaviour
                         {
                             timer.GameOver();
                             win = true;
-                            /* TODO
-                             Сделать очивку за быструю отрисовку уровня
-                             я думаю лучше сделать просто увеличение счетчика win на один больше
-                             т е вывести сообщение Good memory! You are so fast! Win +3. 
-                             чтобы человека быстрее привести к успеху потому что люди и так будут много пригрывать*/
+                            int resultWins = Int32.Parse(results["WINS"]);
+                            resultWins += 3;
+                            results["WINS"] = resultWins.ToString();
+                            File.WriteAllLines("game.result",
+                                results.Select(element => element.Key + "=" + element.Value).ToArray());
                         }
                     }
                 }
