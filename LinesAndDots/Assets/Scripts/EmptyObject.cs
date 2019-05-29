@@ -57,7 +57,7 @@ public class EmptyObject : MonoBehaviour
             other1 = other;
             firstCollision = false;
             visitedDots.Add(other.name);
-            other.GetComponent<SpriteRenderer>().color = Color.green;
+            other.GetComponent<SpriteRenderer>().color = Color.grey;
             return;
         }
         currPos = other.transform.position;
@@ -69,7 +69,7 @@ public class EmptyObject : MonoBehaviour
         other1 = other;
         visitedDots.Add(other.name);
         other1.GetComponent<Dot>().isTrigger = false;
-        other.GetComponent<SpriteRenderer>().color = Color.green;
+        other.GetComponent<SpriteRenderer>().color = Color.grey;
         audioData.Play(0);
 
     }

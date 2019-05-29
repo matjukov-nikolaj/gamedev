@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\Lenovo\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Lenovo\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_LinesAndDots.2115896067.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Lenovo\Desktop\gd1.0.0\gamedev\LinesAndDots" t="IncludeRecursive">
+    <e p="C:\Users\Lenovo\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_LinesAndDots.180235780.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Lenovo\Desktop\gd1.1.0\gamedev\LinesAndDots" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">

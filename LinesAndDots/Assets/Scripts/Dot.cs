@@ -61,7 +61,7 @@ public class Dot : MonoBehaviour
                             int resultWins = Int32.Parse(results["WINS"]);
                             resultWins += 3;
                             results["WINS"] = resultWins.ToString();
-                            File.WriteAllLines("game.result",
+                            File.WriteAllLines("Assets/game.properties",
                                 results.Select(element => element.Key + "=" + element.Value).ToArray());
                         }
                     }

@@ -50,7 +50,7 @@ namespace DefaultNamespace
             Vector3 prevPos = usedDots[0].transform.position;
             LineRenderer lineRenderer = usedDots[0].GetComponent(typeof(LineRenderer)) as LineRenderer;
             yield return new WaitForSeconds(0.2f);
-            usedDots[0].GetComponent<SpriteRenderer>().color = Color.green;
+            usedDots[0].GetComponent<SpriteRenderer>().color = Color.grey;
             for(int i = 1; i < usedDots.Count; ++i)
             {
                 yield return new WaitForSeconds(0.5f);
@@ -61,7 +61,7 @@ namespace DefaultNamespace
                 lineRenderer.SetPosition(1, currPos);
                 lineRenderer = usedDots[i].GetComponent(typeof(LineRenderer)) as LineRenderer;
                 prevPos = currPos;
-                usedDots[i].GetComponent<SpriteRenderer>().color = Color.green;
+                usedDots[i].GetComponent<SpriteRenderer>().color = Color.grey;
             }
             Destroy(GameObject.Find("EmptyObject"));
             DontDestroyOnLoad(this.gameObject);

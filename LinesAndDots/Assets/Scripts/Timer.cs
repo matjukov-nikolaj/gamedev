@@ -142,11 +142,11 @@ public class Timer : MonoBehaviour
             {
                 results["LOSES"] = "0";
                 results["WINS"] = "0";
-                File.WriteAllLines("game.result",
+                File.WriteAllLines("Assets/game.properties",
                     results.Select(element => element.Key + "=" + element.Value).ToArray());
             }
 
-            File.WriteAllLines("game.result",
+            File.WriteAllLines("Assets/game.properties",
                 results.Select(element => element.Key + "=" + element.Value).ToArray());
             CanvasGroup resultScreen = GameObject.Find("CanvasGroup").GetComponent<CanvasGroup>();
             SpriteRenderer blur = GameObject.Find("Blur").GetComponent<SpriteRenderer>();
