@@ -10,8 +10,6 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    private Dictionary<string, string> results = GameResult.GetParameters();
-
     public float time;
 
     public float timeLeft;
@@ -23,8 +21,8 @@ public class Timer : MonoBehaviour
     {
         isGameOver = false;
         Scene scene = SceneManager.GetActiveScene();
-        int resultWins = Int32.Parse(results["WINS"]);
-        int resultLoses = Int32.Parse(results["LOSES"]);
+        int resultWins = PlayerPrefs.GetInt("WINS");
+        int resultLoses = PlayerPrefs.GetInt("LOSES");
         int currentLevel = resultWins + resultLoses;
         float diff = 1.0f;
         if (resultLoses > 0)
@@ -126,28 +124,22 @@ public class Timer : MonoBehaviour
             int resultLoses = 0;
             if (win)
             {
-                resultWins = Int32.Parse(results["WINS"]);
                 ++resultWins;
-                results["WINS"] = resultWins.ToString();
+                PlayerPrefs.SetInt("WINS", resultWins);
             }
             else
             {
-                resultLoses = Int32.Parse(results["LOSES"]);
                 ++resultLoses;
-                results["LOSES"] = resultLoses.ToString();
+                PlayerPrefs.SetInt("LOSES", resultLoses);
             }
 
             int currentLevel = resultWins + resultLoses;
             if (currentLevel == Int32.MaxValue)
             {
-                results["LOSES"] = "0";
-                results["WINS"] = "0";
-                File.WriteAllLines("Assets/game.properties",
-                    results.Select(element => element.Key + "=" + element.Value).ToArray());
+                PlayerPrefs.SetInt("WINS", 0);
+                PlayerPrefs.SetInt("LOSES", 0);
             }
 
-            File.WriteAllLines("Assets/game.properties",
-                results.Select(element => element.Key + "=" + element.Value).ToArray());
             CanvasGroup resultScreen = GameObject.Find("CanvasGroup").GetComponent<CanvasGroup>();
             SpriteRenderer blur = GameObject.Find("Blur").GetComponent<SpriteRenderer>();
             Text resultText = GameObject.Find("Text").GetComponent<Text>();

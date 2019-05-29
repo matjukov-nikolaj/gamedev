@@ -8,8 +8,6 @@ namespace DefaultNamespace
 {
     public class Hints : MonoBehaviour
     {
-        private Dictionary<string, string> results = GameResult.GetParameters();
-
         void Start()
         {
             StartCoroutine(BetweenFunc());
@@ -28,8 +26,8 @@ namespace DefaultNamespace
 
         IEnumerator<WaitForSeconds> ShowHelpBox()
         {
-            int resultWins = Int32.Parse(results["WINS"]);
-            int resultLoses = Int32.Parse(results["LOSES"]);
+            int resultWins = PlayerPrefs.GetInt("WINS");
+            int resultLoses = PlayerPrefs.GetInt("LOSES");
             int currentLevel = resultWins + resultLoses;
             CanvasGroup resultScreen = GameObject.Find("Hints").GetComponent<CanvasGroup>();
             if (currentLevel <= 3)

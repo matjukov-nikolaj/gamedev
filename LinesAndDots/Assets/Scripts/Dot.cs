@@ -9,8 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class Dot : MonoBehaviour
 {
-    private Dictionary<string, string> results = GameResult.GetParameters();
-    
+   
     private LineRenderer lineRenderer;
 
     public bool isActive;
@@ -58,11 +57,9 @@ public class Dot : MonoBehaviour
                         {
                             timer.GameOver();
                             win = true;
-                            int resultWins = Int32.Parse(results["WINS"]);
+                            int resultWins = PlayerPrefs.GetInt("WINS");
                             resultWins += 3;
-                            results["WINS"] = resultWins.ToString();
-                            File.WriteAllLines("Assets/game.properties",
-                                results.Select(element => element.Key + "=" + element.Value).ToArray());
+                            PlayerPrefs.SetInt("WINS", resultWins);
                         }
                     }
                 }

@@ -10,8 +10,6 @@ namespace DefaultNamespace
 {
     public static class LevelGenerator
     {
-        private static Dictionary<string, string> results = GameResult.GetParameters();
-        
         private static Dictionary<int, string> dots= new Dictionary<int, string>();
 
         private static List<GameObject> generatedDots;
@@ -55,8 +53,8 @@ namespace DefaultNamespace
         private static void GenerateVariants()
         {
             variants.Clear();
-            int resultWins = Int32.Parse(results["WINS"]);
-            int resultLoses = Int32.Parse(results["LOSES"]);
+            int resultWins = PlayerPrefs.GetInt("WINS");
+            int resultLoses = PlayerPrefs.GetInt("LOSES");
             int currentLevel = resultWins + resultLoses;
             float diff = 1.0f;
             if (resultLoses > 0)
