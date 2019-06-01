@@ -11,6 +11,8 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject.Find("Wins").GetComponent<Text>().text = PlayerPrefs.GetInt("WINS").ToString();
+        GameObject.Find("Loses").GetComponent<Text>().text = PlayerPrefs.GetInt("LOSES").ToString();
     }
 
     // Update is called once per frame

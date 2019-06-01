@@ -38,7 +38,7 @@ public class Dot : MonoBehaviour
             return;
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !GameObject.Find("Slider").GetComponent<Timer>().isGameOver)
         {
             Vector3 pos = GetCurrentMousePosition().GetValueOrDefault();
             pos.z = 0;
@@ -57,9 +57,11 @@ public class Dot : MonoBehaviour
                         {
                             timer.GameOver();
                             win = true;
-                            int resultWins = PlayerPrefs.GetInt("WINS");
-                            resultWins += 3;
-                            PlayerPrefs.SetInt("WINS", resultWins);
+                        }
+                        else if (win && timer.timeLeft > 0)
+                        {
+                            timer.GameOver();
+                            win = true;
                         }
                     }
                 }

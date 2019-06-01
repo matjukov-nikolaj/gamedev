@@ -13,6 +13,13 @@ public class LoadSceneScript : MonoBehaviour
     
     public void MainMenu()
     {
+        if (!GameObject.Find("Slider").GetComponent<Timer>().isGameOver)
+        {
+            
+            int currentLoses = PlayerPrefs.GetInt("LOSES");
+            currentLoses++;
+            PlayerPrefs.SetInt("LOSES", currentLoses);
+        }
         Application.LoadLevel("MainMenu");
     }
 }

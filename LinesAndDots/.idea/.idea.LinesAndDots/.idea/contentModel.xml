@@ -13,6 +13,7 @@
           <e p="Hints.cs" t="Include" />
           <e p="LevelGenerator.cs" t="Include" />
           <e p="LoadSceneScript.cs" t="Include" />
+          <e p="ResetPlayerPrefs.cs" t="Include" />
           <e p="SceneController.cs" t="Include" />
           <e p="Score.cs" t="Include" />
           <e p="Timer.cs" t="Include" />

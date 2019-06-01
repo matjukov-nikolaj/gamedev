@@ -14,6 +14,7 @@ namespace DefaultNamespace
 
         void Start()
         {
+            Cursor.lockState = CursorLockMode.Locked;
             StartCoroutine (ShowHelpBox ());
             GenerateSceneDots();
             LevelGenerator.generate();

@@ -37,7 +37,7 @@ public class EmptyObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !GameObject.Find("Slider").GetComponent<Timer>().isGameOver)
         {
             Vector3 pos = GetCurrentMousePosition().GetValueOrDefault();
             transform.position = new Vector3(pos.x, pos.y, 90);
