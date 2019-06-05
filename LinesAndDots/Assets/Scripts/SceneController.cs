@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace DefaultNamespace
 {
     public class SceneController : MonoBehaviour
     {
-        private Dictionary<string, string> results = GameResult.GetParameters();
-        
         private List<GameObject> sceneDots = new List<GameObject>();
 
         private List<GameObject> usedDots;
@@ -15,13 +14,8 @@ namespace DefaultNamespace
 
         void Start()
         {
-            StartCoroutine (BetweenFunc ());
-        }
-        
-        IEnumerator<WaitForSeconds> BetweenFunc()
-        {
+            Cursor.lockState = CursorLockMode.Locked;
             StartCoroutine (ShowHelpBox ());
-            yield return new WaitForSeconds(2.0f);
             GenerateSceneDots();
             LevelGenerator.generate();
             StartCoroutine (DrawDotsDinamicly ());
@@ -29,27 +23,24 @@ namespace DefaultNamespace
         
         IEnumerator<WaitForSeconds> ShowHelpBox()
         {
-            int resultWins = Int32.Parse(results["WINS"]);
-            int resultLoses = Int32.Parse(results["LOSES"]);
+            int resultWins = PlayerPrefs.GetInt("WINS");
+            int resultLoses = PlayerPrefs.GetInt("LOSES");
             int currentLevel = resultWins + resultLoses;
             CanvasGroup resultScreen = GameObject.Find("Hints").GetComponent<CanvasGroup>();
             if (currentLevel <= 3)
             {
                 resultScreen.alpha = 1f;
                 resultScreen.blocksRaycasts = true;
-                yield return new WaitForSeconds(3.0f);
-                resultScreen = GameObject.Find("CanvasGroup").GetComponent<CanvasGroup>();
+                yield return new WaitForSeconds(2);
                 resultScreen.alpha = 0f;
                 resultScreen.blocksRaycasts = false;
             }
             else
             {
-                resultScreen = GameObject.Find("CanvasGroup").GetComponent<CanvasGroup>();
                 resultScreen.alpha = 0f;
                 resultScreen.blocksRaycasts = false;
             }
         }
-
         IEnumerator<WaitForSeconds> DrawDotsDinamicly()
         {
             GenerateSceneDots();
@@ -58,7 +49,7 @@ namespace DefaultNamespace
             Vector3 prevPos = usedDots[0].transform.position;
             LineRenderer lineRenderer = usedDots[0].GetComponent(typeof(LineRenderer)) as LineRenderer;
             yield return new WaitForSeconds(0.2f);
-            usedDots[0].GetComponent<SpriteRenderer>().color = Color.green;
+            usedDots[0].GetComponent<SpriteRenderer>().color = Color.grey;
             for(int i = 1; i < usedDots.Count; ++i)
             {
                 yield return new WaitForSeconds(0.5f);
@@ -69,7 +60,7 @@ namespace DefaultNamespace
                 lineRenderer.SetPosition(1, currPos);
                 lineRenderer = usedDots[i].GetComponent(typeof(LineRenderer)) as LineRenderer;
                 prevPos = currPos;
-                usedDots[i].GetComponent<SpriteRenderer>().color = Color.green;
+                usedDots[i].GetComponent<SpriteRenderer>().color = Color.grey;
             }
             Destroy(GameObject.Find("EmptyObject"));
             DontDestroyOnLoad(this.gameObject);

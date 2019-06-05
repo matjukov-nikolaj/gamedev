@@ -37,7 +37,7 @@ public class EmptyObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !GameObject.Find("Slider").GetComponent<Timer>().isGameOver)
         {
             Vector3 pos = GetCurrentMousePosition().GetValueOrDefault();
             transform.position = new Vector3(pos.x, pos.y, 90);
@@ -57,7 +57,7 @@ public class EmptyObject : MonoBehaviour
             other1 = other;
             firstCollision = false;
             visitedDots.Add(other.name);
-            other.GetComponent<SpriteRenderer>().color = Color.green;
+            other.GetComponent<SpriteRenderer>().color = Color.grey;
             return;
         }
         currPos = other.transform.position;
@@ -69,7 +69,7 @@ public class EmptyObject : MonoBehaviour
         other1 = other;
         visitedDots.Add(other.name);
         other1.GetComponent<Dot>().isTrigger = false;
-        other.GetComponent<SpriteRenderer>().color = Color.green;
+        other.GetComponent<SpriteRenderer>().color = Color.grey;
         audioData.Play(0);
 
     }

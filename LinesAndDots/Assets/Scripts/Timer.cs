@@ -10,21 +10,25 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    private Dictionary<string, string> results = GameResult.GetParameters();
-
     public float time;
 
     public float timeLeft;
 
-    public bool isGameOver;
+    public bool isGameOver = false;
+    
+    public bool win = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        isGameOver = false;
         Scene scene = SceneManager.GetActiveScene();
-        int resultWins = Int32.Parse(results["WINS"]);
-        int resultLoses = Int32.Parse(results["LOSES"]);
+        if (scene.name == "SampleScene2")
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+        isGameOver = false;
+        int resultWins = PlayerPrefs.GetInt("WINS");
+        int resultLoses = PlayerPrefs.GetInt("LOSES");
         int currentLevel = resultWins + resultLoses;
         float diff = 1.0f;
         if (resultLoses > 0)
@@ -33,7 +37,11 @@ public class Timer : MonoBehaviour
         }
 
         Slider slider = GameObject.Find("Slider").GetComponent<Slider>();
-        time = timeLeft;
+        if (currentLevel <= 3)
+        {
+            timeLeft += 2;
+        }
+
         if (scene.name == "SampleScene")
         {
             if (currentLevel > 500 && diff > 0.5)
@@ -42,6 +50,7 @@ public class Timer : MonoBehaviour
                 slider.maxValue = 20;
                 return;
             }
+
             if (currentLevel > 0 && currentLevel <= 150)
             {
                 timeLeft = 5;
@@ -65,15 +74,19 @@ public class Timer : MonoBehaviour
             {
                 timeLeft = 30;
                 slider.maxValue = 30;
-            } else if (currentLevel > 0 && currentLevel <= 150)
+                time = timeLeft;
+            }
+            else if (currentLevel > 0 && currentLevel <= 150)
             {
                 timeLeft = 10;
                 slider.maxValue = 10;
+                time = timeLeft;
             }
             else
             {
                 timeLeft = 15;
                 slider.maxValue = 15;
+                time = timeLeft;
             }
 
             CanvasGroup resultScreen = GameObject.Find("CanvasGroup").GetComponent<CanvasGroup>();
@@ -87,8 +100,11 @@ public class Timer : MonoBehaviour
 // Update is called once per frame
     void Update()
     {
-        GameObject.Find("Slider").GetComponent<Slider>().value = timeLeft;
-        if (timeLeft > 0)
+        Slider slider = GameObject.Find("Slider").GetComponent<Slider>();
+
+        slider.value = timeLeft;
+
+        if (timeLeft > 0 &&!isGameOver)
         {
             timeLeft -= Time.deltaTime;
         }
@@ -112,42 +128,48 @@ public class Timer : MonoBehaviour
         {
             Console.WriteLine("GameOver");
             bool win = GetGameResult();
-            int resultWins = 0;
-            int resultLoses = 0;
+            int resultWins = PlayerPrefs.GetInt("WINS");
+            int resultLoses = PlayerPrefs.GetInt("LOSES");
             if (win)
             {
-                resultWins = Int32.Parse(results["WINS"]);
                 ++resultWins;
-                results["WINS"] = resultWins.ToString();
+                PlayerPrefs.SetInt("WINS", resultWins);
             }
             else
             {
-                resultLoses = Int32.Parse(results["LOSES"]);
                 ++resultLoses;
-                results["LOSES"] = resultLoses.ToString();
+                PlayerPrefs.SetInt("LOSES", resultLoses);
             }
 
             int currentLevel = resultWins + resultLoses;
             if (currentLevel == Int32.MaxValue)
             {
-// TODO написать что игра закончилась проигрыши и выигрыши обновились
-                results["LOSES"] = "0";
-                results["WINS"] = "0";
+                PlayerPrefs.SetInt("WINS", 0);
+                PlayerPrefs.SetInt("LOSES", 0);
             }
 
-            File.WriteAllLines("game.result",
-                results.Select(element => element.Key + "=" + element.Value).ToArray());
             CanvasGroup resultScreen = GameObject.Find("CanvasGroup").GetComponent<CanvasGroup>();
             SpriteRenderer blur = GameObject.Find("Blur").GetComponent<SpriteRenderer>();
-            Text resultText = GameObject.Find("Text").GetComponent<Text>();
+            Text resultText = GameObject.Find("ResultText").GetComponent<Text>();
             resultScreen.alpha = 1f;
             resultScreen.blocksRaycasts = true;
             if (win)
             {
                 blur.color = new Color(0.0f, 255.0f, 0.0f, 0.2f);
-                resultText.text = "Win!";
-                AudioSource audioSource = GameObject.Find("WinAudio").GetComponent<AudioSource>();
-                audioSource.Play(0);
+                if (timeLeft > (time / 3)) 
+                {
+                    resultText.text = "You are so fast! Win +3";
+                    resultWins += 2;
+                    PlayerPrefs.SetInt("WINS", resultWins);
+                    AudioSource audioSource1 = GameObject.Find("WinAudio").GetComponent<AudioSource>();
+                    audioSource1.Play(0);
+                }
+                else
+                {
+                    resultText.text = "Win!";
+                    AudioSource audioSource = GameObject.Find("WinAudio").GetComponent<AudioSource>();
+                    audioSource.Play(0);
+                }
             }
             else
             {
@@ -170,12 +192,14 @@ public class Timer : MonoBehaviour
         List<String> visitedDots = emptyObject.GetComponent<EmptyObject>().GetVisitedDots();
         List<String> requiredDots = LevelGenerator.GetGeneratedListStr();
         List<bool> isContains = new List<bool>(requiredDots.Count);
-        foreach (var requiredDot in requiredDots)
+        if (requiredDots.Count == visitedDots.Count)
         {
-            isContains.Add(visitedDots.Contains(requiredDot) ? true : false);
+            for (int i = 0; i < requiredDots.Count; i++)
+            {
+                isContains.Add(requiredDots[i] == visitedDots[i] ? true : false);
+            }
         }
-
-        bool win = false;
+        
         if (requiredDots.Count == visitedDots.Count)
         {
             foreach (var isContain in isContains)
@@ -189,6 +213,7 @@ public class Timer : MonoBehaviour
                 win = true;
             }
         }
+        
 
         return win;
     }

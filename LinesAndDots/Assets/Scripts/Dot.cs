@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Dot : MonoBehaviour
 {
+   
     private LineRenderer lineRenderer;
 
     public bool isActive;
@@ -34,7 +38,7 @@ public class Dot : MonoBehaviour
             return;
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !GameObject.Find("Slider").GetComponent<Timer>().isGameOver)
         {
             Vector3 pos = GetCurrentMousePosition().GetValueOrDefault();
             pos.z = 0;
@@ -53,11 +57,11 @@ public class Dot : MonoBehaviour
                         {
                             timer.GameOver();
                             win = true;
-                            /* TODO
-                             Сделать очивку за быструю отрисовку уровня
-                             я думаю лучше сделать просто увеличение счетчика win на один больше
-                             т е вывести сообщение Good memory! You are so fast! Win +3. 
-                             чтобы человека быстрее привести к успеху потому что люди и так будут много пригрывать*/
+                        }
+                        else if (win && timer.timeLeft > 0)
+                        {
+                            timer.GameOver();
+                            win = true;
                         }
                     }
                 }
