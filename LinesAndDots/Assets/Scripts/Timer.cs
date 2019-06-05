@@ -192,10 +192,14 @@ public class Timer : MonoBehaviour
         List<String> visitedDots = emptyObject.GetComponent<EmptyObject>().GetVisitedDots();
         List<String> requiredDots = LevelGenerator.GetGeneratedListStr();
         List<bool> isContains = new List<bool>(requiredDots.Count);
-        foreach (var requiredDot in requiredDots)
+        if (requiredDots.Count == visitedDots.Count)
         {
-            isContains.Add(visitedDots.Contains(requiredDot) ? true : false);
+            for (int i = 0; i < requiredDots.Count; i++)
+            {
+                isContains.Add(requiredDots[i] == visitedDots[i] ? true : false);
+            }
         }
+        
         if (requiredDots.Count == visitedDots.Count)
         {
             foreach (var isContain in isContains)
@@ -209,6 +213,7 @@ public class Timer : MonoBehaviour
                 win = true;
             }
         }
+        
 
         return win;
     }
