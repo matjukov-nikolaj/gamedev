@@ -156,7 +156,7 @@ public class Timer : MonoBehaviour
             if (win)
             {
                 blur.color = new Color(0.0f, 255.0f, 0.0f, 0.2f);
-                if (timeLeft > (time / 3))
+                if (timeLeft > (time / 3)) 
                 {
                     resultText.text = "You are so fast! Win +3";
                     resultWins += 2;
