@@ -174,13 +174,15 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                SpriteRenderer screenshot = GameObject.Find("ScreenShot").GetComponent<SpriteRenderer>();
+                Image screenshot = GameObject.Find("ScreenShot").GetComponent<Image>();
                 byte[] bytes = System.IO.File.ReadAllBytes(Application.persistentDataPath + "/" + "ScreenshotManager.png");
                 Texture2D texture = new Texture2D(1, 1);
                 texture.LoadImage(bytes);
                 Sprite sp = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f) );
                 screenshot.sprite = sp;
                 screenshot.color = new Color(255.0f, 255.0f, 255.0f, 0.2f);
+                RectTransform canvasRect = GameObject.Find("Canvas").GetComponent<RectTransform>();
+                screenshot.GetComponent<RectTransform>().rect.Set(424, 436, canvasRect.rect.width, canvasRect.rect.height);
                 blur.color = new Color(255.0f, 0.0f, 0.0f, 0.2f);
                 resultText.text = "Lose!";
                 AudioSource audioSource = GameObject.Find("LoseAudio").GetComponent<AudioSource>();
@@ -194,7 +196,11 @@ public class Timer : MonoBehaviour
         sm.SaveScreenTexture();
         Application.LoadLevel("SampleScene2");
     }
-
+    private float GetScale(int width, int height, Vector2 scalerReferenceResolution, float scalerMatchWidthOrHeight)
+    {
+        return Mathf.Pow(width/scalerReferenceResolution.x, 1f - scalerMatchWidthOrHeight)*
+               Mathf.Pow(height/scalerReferenceResolution.y, scalerMatchWidthOrHeight);
+    }
     public bool GetGameResult()
     {
         GameObject emptyObject = GameObject.Find("EmptyObject");
