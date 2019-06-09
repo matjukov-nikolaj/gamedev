@@ -162,12 +162,16 @@ public class Timer : MonoBehaviour
                     resultText.text = "You are so fast! Win +3";
                     resultWins += 2;
                     PlayerPrefs.SetInt("WINS", resultWins);
+                    Image screenshot = GameObject.Find("ScreenShot").GetComponent<Image>();
+                    screenshot.color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
                     AudioSource audioSource1 = GameObject.Find("WinAudio").GetComponent<AudioSource>();
                     audioSource1.Play(0);
                 }
                 else
                 {
                     resultText.text = "Win!";
+                    Image screenshot = GameObject.Find("ScreenShot").GetComponent<Image>();
+                    screenshot.color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
                     AudioSource audioSource = GameObject.Find("WinAudio").GetComponent<AudioSource>();
                     audioSource.Play(0);
                 }
